@@ -1,0 +1,25 @@
+<?php $_product = $block->getProduct(); ?>
+<div class="social-media-icons">
+    <span><?= __("Share"); ?></span>
+    <div class="social-links-wrapper">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($_product->getProductUrl()); ?>&t=<?php echo urlencode($_product->getName()) ?>"
+           onclick='javascript:window.open(this.href,"","width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes");return false'
+           title="Share on facebook">
+            <img src="<?php echo $this->getViewFileUrl('Magento_Catalog::images/facebook.png'); ?>" alt="Facebook">
+        </a>
+        <!-- Google Plus -->
+        <a href="https://plus.google.com/share?url=<?php echo urlencode($_product->getProductUrl()); ?>"
+           onclick='javascript:window.open(this.href,"","width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes");return false'
+           title="Share on Google Plus">
+            <img src="<?php echo $this->getViewFileUrl('Magento_Catalog::images/google_plus.png'); ?>"
+                 alt="Google Plus">
+        </a>
+        <!-- TWITTER -->
+        <a href="http://twitter.com/home/?status=<?php echo urlencode($_product->getProductUrl()); ?>(<?php echo urlencode($_product->getName()) ?>)"
+           onclick='javascript:window.open(this.href,"","width=640,height=480,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes");return false'
+           title="Share on Twitter">
+            <img src="<?php echo $this->getViewFileUrl('Magento_Catalog::images/twiter.png'); ?>" alt="Twitter">
+        </a>
+    </div>
+</div>

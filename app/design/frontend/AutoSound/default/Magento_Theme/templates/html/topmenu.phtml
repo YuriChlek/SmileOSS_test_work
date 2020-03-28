@@ -1,0 +1,25 @@
+<?php
+/**
+ * AutoSound default Theme product html topmenu template
+ *
+ * @author Yuri Chlek yurichhlek@gmail.com
+ * @copyright 2020 Chlek
+ */
+
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit)
+?>
+
+<nav class="navigation" data-action="navigation">
+    <div class="menu-button-wrapper">
+        <p class="title"><?= __("Product catalog"); ?></p>
+        <span class="menu-row">&nbsp;</span>
+    </div>
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?= /* @noEscape */
+        $_menuHtml ?>
+    </ul>
+    <ul class="additional-info-links">
+        <?= $block->getChildHtml("auto.sound.menu.right"); ?>
+    </ul>
+</nav>

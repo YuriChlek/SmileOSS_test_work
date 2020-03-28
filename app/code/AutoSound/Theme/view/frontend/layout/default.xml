@@ -2,12 +2,33 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="logo">
-            <arguments>
-                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-                <argument name="logo_img_width" xsi:type="number">161</argument>
-                <argument name="logo_img_height" xsi:type="number">57</argument>
-            </arguments>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="auto.sound.top.navigation" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">auto_sound_top_navigation</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="city.select">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">city_select_block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Cms\Block\Block" name="call.back.wrapper" after="top.search">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">call_back_block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="catalog.topnav">
+            <block class="Magento\Cms\Block\Block" name="auto.sound.menu.right" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">additional_info_links</argument>
+                </arguments>
+            </block>
         </referenceBlock>
     </body>
 </page>
