@@ -305,6 +305,7 @@
 
     .block.related {
         clear: both;
+        margin-bottom: 28px;
     }
 
     /* Owl carousel */
@@ -709,12 +710,131 @@
     .product-item .price-box {
         text-align: right;
         margin: -3px 0 15px;
+
         .price {
             font-size: 26px;
             font-weight: bold;
         }
-        .minimal-price{
+
+        .minimal-price {
             display: flex;
         }
     }
+
+    .product.data.items {
+        border-bottom: 2px solid #eff0f3;
+        margin-bottom: 37px;
+
+        & > .item.title > .data.switch {
+            border: none;
+            background-color: white;
+            font-size: 16px;
+            color: @autosound-color-boulder;
+            padding: 3.5px 0 5.5px;
+            margin-right: 58px;
+        }
+
+        & > .item.title.active > .switch {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-bottom: 2px solid #fb2539;
+            margin-bottom: -2px;
+
+            &.data {
+                color: @autosound-color-torch-red;
+                padding-bottom: 20.5px
+            }
+        }
+    }
+
+    .product.info.detailed .additional-attributes {
+        width: 100%;
+    }
+
+    .additional-attributes {
+        .col.label {
+            width: 52%;
+        }
+
+        tbody {
+            tr:nth-child(2n+1) {
+                background-color: #eff0f3;
+            }
+        }
+    }
+
+    .product.info.detailed .additional-attributes > tbody > tr > th,
+    .product.info.detailed .additional-attributes > tbody > tr > td {
+        padding: 13px 10px 13px 23px;
+        font-weight: normal;
+    }
+
+    .info-product-wrapper {
+        .data.item:first-child {
+            margin-bottom: 57px;
+        }
+    }
+
+    .block.review-add .review-form {
+        margin: 0 auto;
+
+    }
+
+    .review-legend > span {
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    .article.additional {
+        margin-bottom: 20px;
+    }
+
+    .close,
+    .read-more {
+        padding: 5px 17px;
+        position: relative;
+        color: @autosound-color-mine-shaft;
+
+        &::before {
+            .pseudo-elements-mixin();
+            left: 0;
+            top: 11px;
+            background: url("@{image__url}arrow-red.png") center no-repeat;
+            width: 11px;
+            height: 8px;
+        }
+
+        &::after {
+            .pseudo-elements-mixin();
+            border-bottom: 1px solid @autosound-color-dusty-gray;
+            bottom: 4px;
+            left: 17px;
+            right: 17px;
+        }
+    }
+
+    .close::before {
+        transform: rotate(180deg);
+    }
+
+
+    .article.description {
+        position: relative;
+
+        &::after {
+            .pseudo-elements-mixin();
+            height: 5px;
+            background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #fff);
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        p {
+            line-height: 22px;
+        }
+    }
+
+
 }

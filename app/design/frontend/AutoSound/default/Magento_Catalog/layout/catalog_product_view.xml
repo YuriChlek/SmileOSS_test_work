@@ -4,6 +4,16 @@
         <referenceContainer name="product.info.main">
             <container name="product.info.main.wrapper" htmlTag="div" htmlClass="product-info-wrapper" after="-"/>
         </referenceContainer>
+        <referenceBlock name="product.attributes">
+            <arguments>
+                <argument name="sort_order" xsi:type="string">10</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="product.info.description">
+            <arguments>
+                <argument name="sort_order" xsi:type="string">20</argument>
+            </arguments>
+        </referenceBlock>
         <move element="product.info.sku" destination="page.main.title" after="-"/>
         <move element="product.price.final" destination="product.info.main.wrapper" before="-"/>
         <move element="alert.urls" destination="product.info.main.wrapper" after="alert.urls"/>
