@@ -55,6 +55,7 @@ switch ($type = $block->getType()) {
             $showCart = false;
             $templateType = null;
             $description = false;
+            $showRating = false;
         }
         break;
 
@@ -277,7 +278,7 @@ $shuffle; ?>">
                                                                                       href="<?= $block->escapeUrl($block->getProductUrl($item)); ?>">
                                             <?= $block->escapeHtml($item->getName()); ?></a>
                                     </strong>
-                                    <?= $block->getReviewsSummaryHtml($item, $templateType); ?>
+                                    <?= ($showRating)?  $block->getReviewsSummaryHtml($item, $templateType): ''; ?>
                                     <?= /* @noEscape */
                                     $block->getProductPrice($item); ?>
                                     <?php if ($templateType) : ?>

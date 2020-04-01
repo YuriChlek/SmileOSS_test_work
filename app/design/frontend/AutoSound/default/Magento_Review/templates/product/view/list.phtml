@@ -18,40 +18,66 @@ $format = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
             <div class="toolbar review-toolbar">
                 <?= $block->getChildHtml('toolbar') ?>
             </div>
-            <ol class="items review-items">
+            <ol class="items article review-items">
                 <?php foreach ($_items as $_review) : ?>
                     <li class="item review-item" itemscope itemprop="review" itemtype="http://schema.org/Review">
                         <div class="review-title" itemprop="name"><?= $block->escapeHtml($_review->getTitle()) ?></div>
-                        <div class="review-details">
-                            <p class="review-author">
-                                <span class="review-details-label"><?= $block->escapeHtml(__('Review by')) ?></span>
-                                <strong class="review-details-value" itemprop="author"><?= $block->escapeHtml($_review->getNickname()) ?></strong>
-                            </p>
-                            <p class="review-date">
-                                <span class="review-details-label"><?= $block->escapeHtml(__('Posted on')) ?></span>
-                                <time class="review-details-value" itemprop="datePublished" datetime="<?= $block->escapeHtmlAttr($block->formatDate($_review->getCreatedAt(), $format)) ?>"><?= $block->escapeHtml($block->formatDate($_review->getCreatedAt(), $format)) ?></time>
-                            </p>
-                        </div>
                         <?php if (count($_review->getRatingVotes())) : ?>
                             <div class="review-ratings">
                                 <?php foreach ($_review->getRatingVotes() as $_vote) : ?>
-                                    <div class="rating-summary item" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-                                        <span class="label rating-label"><span><?= $block->escapeHtml($_vote->getRatingCode()) ?></span></span>
-                                        <div class="rating-result" title="<?= $block->escapeHtmlAttr($_vote->getPercent()) ?>%">
-                                            <meta itemprop="worstRating" content = "1"/>
-                                            <meta itemprop="bestRating" content = "100"/>
-                                            <span style="width:<?= $block->escapeHtmlAttr($_vote->getPercent()) ?>%">
-                                <span itemprop="ratingValue"><?= $block->escapeHtml($_vote->getPercent()) ?>%</span>
-                            </span>
+                                    <div class="rating-summary item" itemprop="reviewRating" itemscope
+                                         itemtype="http://schema.org/Rating">
+                                        <p class="label rating-label"><span><?= "Оценка" ?></span></p>
+                                        <div class="rating-result"
+                                             title="<?= $block->escapeHtmlAttr($_vote->getPercent()) ?>%">
+                                            <meta itemprop="worstRating" content="1"/>
+                                            <meta itemprop="bestRating" content="100"/>
+                                            <span style="width:<?= $block->escapeHtmlAttr($_vote->getPercent()); ?>%">
+                                                <span itemprop="ratingValue"><?= $block->escapeHtml($_vote->getPercent()) ?>%</span>
+                                            </span>
                                         </div>
+                                        <span class="comment-rating-value"><?= number_format(($_vote->getPercent()) / 20, 1, ",", "."); ?></span>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
-                        <div class="review-content" itemprop="description">
-                            <?= /* @noEscape */ nl2br($block->escapeHtml($_review->getDetail())) ?>
+                        <div class="read-more-wrapper">
+                            <div class="review-details">
+                                <p class="review-author">
+                                    <span class="review-details-label"><?= $block->escapeHtml(__('Review by')) ?></span>
+                                    <strong class="review-details-value"
+                                            itemprop="author"><?= $block->escapeHtml($_review->getNickname()) ?></strong>
+                                </p>
+                                <p class="review-date">
+                                    <span class="review-details-label"><?= $block->escapeHtml(__('Posted on')) ?></span>
+                                    <time class="review-details-value" itemprop="datePublished"
+                                          datetime="<?= $block->escapeHtmlAttr($block->formatDate($_review->getCreatedAt(), $format)) ?>"><?= $block->escapeHtml($block->formatDate($_review->getCreatedAt(), $format)) ?></time>
+                                </p>
+                            </div>
+                            <div class="review-content-wrapper">
+                                <div class="article review-content" itemprop="description">
+                                    <?= /* @noEscape */
+                                    nl2br($block->escapeHtml($_review->getDetail())) ?>
+                                </div>
+                                <div class="review-additional-content">
+                                    <div class="additional-about-wrap">
+                                        <p class="text advantages"><span
+                                                    class="title"><?= __("Advantages:") ?></span><span><?= __("good battery, and generally a good smartphone") ?></span>
+                                        </p>
+                                        <p class="text disadvantages"><span
+                                                    class="title"><?= __("Disadvantages:") ?></span><span><?= __("not detected") ?></span>
+                                        </p>
+                                        <a class="answer-link" href="#">1<?= __("answer") ?></a>
+                                        <a class="answer-link" href="#"><?= __("To answer") ?></a>
+                                    </div>
+                                    <div class="review-rating-wrap">
+                                        <p><?= __("Was this review helpful to you:"); ?></p>
+                                        <span class="like"><?= '14' ?></span>
+                                        <span class="dis-like"><?= '3' ?></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </li>
                 <?php endforeach; ?>
             </ol>
@@ -60,4 +86,12 @@ $format = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
             </div>
         </div>
     </div>
-<?php endif;?>
+<?php endif; ?>
+<script type="text/x-magento-init">
+                 {
+                        "*": {
+                            "AutoSound_Theme/js/readmore-include": {}
+                        }
+                  }
+
+</script>
