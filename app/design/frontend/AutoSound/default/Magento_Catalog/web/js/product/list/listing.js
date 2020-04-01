@@ -34,28 +34,26 @@ define([
 
         owlIncludeRecentlyViewed: function(){
             $('.product-items').owlCarousel({
-                loop: true,
+                loop: false,
                 margin: 0,
                 nav: true,
                 responsiveClass: true,
-
                 responsive: {
                     0: {
                         items: 1,
-                        nav: false
+                        nav: false,
                     },
                     480: {
                         items: 2,
-                        nav: false
+                        nav: false,
                     },
                     768: {
                         items: 3,
-                        nav: false
+                        nav: true,
                     },
                     1024: {
                         items: 6,
                         nav: true,
-                        loop: false
                     }
                 }
             });},

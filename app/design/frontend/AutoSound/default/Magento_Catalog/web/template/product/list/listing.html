@@ -4,6 +4,7 @@
         <strong role="heading"
                 aria-level="2"
                 text="label"/>
+        <a class="read-more review-products" href="#" data-bind="i18n: 'Все просмотренные товары'"></a>
     </div>
     <div class="block-content">
         <div css="'products-' + displayMode">
@@ -41,6 +42,11 @@
                                 <fastForEach args="data: getRegion('description-area'), as: '$col'" >
                                     <render args="$col.getBody()"/>
                                 </fastForEach>
+                            </div>
+
+                            <div class="additional-info-wrap">
+                                <span class="rating">&nbsp;</span>
+                                <span class="reviews">32 отзыва</span>
                             </div>
                         </div>
                     </div>
