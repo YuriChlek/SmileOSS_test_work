@@ -12,11 +12,15 @@
         <referenceContainer name="header-wrapper">
             <container name="header.panel.links.wrapper" htmlClass="links-wrapper" htmlTag="ul" after="call.back.wrapper"/>
         </referenceContainer>
-        <referenceBlock name="header" remove="true"/>
         <move element="my-account-link" destination="header.panel.links.wrapper"/>
         <move element="wish-list-link" destination="header.panel.links.wrapper" after="my-account-link" />
         <move element="catalog.compare.link" destination="header.panel.links.wrapper" after="-"/>
         <move element="minicart" destination="header-wrapper" after="-"/>
-        <!--<move element="product.price.final" destination="header-wrapper" after="-"/>-->
+        <move element="before.body.end" destination="menu.footer.customer.wrapper" after="-"/>
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
     </body>
 </page>

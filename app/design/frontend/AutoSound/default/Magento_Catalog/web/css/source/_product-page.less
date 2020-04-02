@@ -53,6 +53,24 @@
         width: 55%;
         padding: 0 0 0 10px;
         box-sizing: border-box;
+
+        .box-tocart {
+            padding-left: 20px;
+            margin-bottom: 0;
+
+            .input-text.qty {
+                width: 90px;
+            }
+        }
+    }
+
+    .table.grouped {
+        .control .qty {
+            width: 90px;
+        }
+        .product-item-name{
+            margin-left: 20px;
+        }
     }
 
     .page-layout-1column .columns .product.media {
@@ -148,7 +166,7 @@
         .stock.available {
             text-transform: none;
             font-weight: normal;
-            margin-right: 30px;
+            margin-right: 26px;
             padding-bottom: 6px;
         }
 
@@ -168,13 +186,13 @@
 
     .reviews-actions {
         .action.view {
-            padding-left: 39px;
+            padding-left: 34px;
             position: relative;
 
             &:before {
                 .pseudo-elements-mixin();
                 background: url("@{image__url}reviews-icon.png") center no-repeat;
-                left: 24px;
+                left: 17px;
                 top: 5px;
                 width: 12px;
                 height: 11px;
@@ -662,9 +680,9 @@
         }
     }
 
-    .column.main .block .title strong {
+    .column.main {.block .title strong {
         font-size: inherit;
-    }
+    }}
 
     .block-content {
         .products {
@@ -838,7 +856,6 @@
         transform: rotate(180deg);
     }
 
-
     .article.description {
         position: relative;
 
@@ -916,14 +933,13 @@
         }
 
         .review-content-wrapper {
-            border-right: 1px solid @autosound-color-dusty-gray;
+            border-right: 1px solid @autosound-color-athens-gray;
             padding-right: 20px;
         }
 
         .review-content {
             margin-bottom: 7px;
         }
-
 
         .review-ratings {
             float: right;
@@ -1048,8 +1064,6 @@
         border-bottom: 0;
         margin-bottom: 25px;
     }
-
-    /*-------------------*/
 
     .block-viewed-products-grid .block-title strong {
         font-size: 26px;
@@ -1224,5 +1238,8 @@
                 background: url("@{image__url}reviews-icon.png") left no-repeat;
             }
         }
+    }
+    .columns .column.main{
+        padding-bottom: 43px;
     }
 }

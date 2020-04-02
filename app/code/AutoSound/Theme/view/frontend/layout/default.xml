@@ -30,5 +30,19 @@
                 </arguments>
             </block>
         </referenceBlock>
+        <referenceContainer name="footer">
+            <container name="menu.footer.customer.wrapper" htmlClass="footer-links-wrapper" htmlTag="div">
+                <block class="Magento\Cms\Block\Block" name="footer.custom.links" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_links</argument>
+                    </arguments>
+                </block>
+            </container>
+            <block class="Magento\Cms\Block\Block" name="footer.social.links" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_contacts</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     </body>
 </page>

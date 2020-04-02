@@ -1,0 +1,209 @@
+& when (@media-common = true) {
+    .page-footer {
+        background-color: #474a4e;
+        overflow: hidden;
+    }
+
+    .footer.content {
+        border-top: none;
+        display: flex;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        width: 100%;
+
+        .catalog {
+            /*margin-right: 4px;*/
+        }
+
+        .company,
+        .to-buyers {
+            margin-right: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            margin-bottom: 31px;
+        }
+
+        .footer-links-wrapper {
+            padding: 43px 45px 25px 0;
+            box-sizing: border-box;
+            width: 78.5%;
+        }
+
+        li.link-row {
+            box-sizing: border-box;
+            margin-bottom: 6px;
+        }
+
+        .footer-link {
+            color: @autosound-color-white;
+            opacity: .4;
+            font-size: 14px;
+            font-weight: normal;
+
+            &:hover {
+                opacity: 1;
+                color: @autosound-color-white;
+            }
+        }
+    }
+
+    .footer-contacts-wrapper {
+        width: 20%;
+        padding: 40px 0 28px 70px;
+        box-sizing: border-box;
+        background-color: @autosound-color-mako;
+        position: relative;
+        z-index: 1;
+        color: @autosound-color-white;
+
+        &:before {
+            .pseudo-elements-mixin();
+            top: 0;
+            left: 100%;
+            width: 9999999px;
+            bottom: 0;
+            background-color: @autosound-color-mako;
+            z-index: -1;
+        }
+    }
+
+    .footer-links-column {
+        width: 18%;
+
+        &.catalog {
+            width: 39%;
+            display: flex;
+            flex-wrap: wrap;
+
+            .link-row {
+                width: 50%;
+
+                &.title {
+                    width: 100%;
+                }
+            }
+        }
+
+        .title {
+            width: 100%;
+        }
+
+    }
+
+    .footer-links-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: @autosound-color-white;
+        opacity: .7;
+        padding-bottom: 4px;
+    }
+
+    .copyright-auto-sound {
+        border-top: 1px solid #595c5f;
+        display: flex;
+        justify-content: space-between;
+
+        .copyright {
+            font-size: 14px;
+            color: @autosound-color-white;
+            opacity: .3;
+
+            &.additional {
+                margin: 20px 0 0;
+                opacity: 1;
+            }
+        }
+
+        .additional {
+            span {
+                &:first-child {
+                    opacity: .3;
+                    padding-right: 3px;
+                }
+
+                &:last-child {
+                    font-size: 16px;
+                    font-weight: bold;
+                    letter-spacing: -.4px;
+                }
+            }
+        }
+    }
+
+    .footer .copyright {
+        margin: 23px 2px 3px;
+    }
+
+    .phone {
+        margin-bottom: 50px;
+
+        & > span {
+            display: block;
+        }
+
+        .number {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            opacity: .77;
+        }
+
+        .details {
+            font-size: 12px;
+            opacity: .3;
+            line-height: 15px;
+        }
+    }
+
+    .social-wrapper {
+        .title {
+            letter-spacing: .4px;
+            opacity: .5;
+            margin-bottom: 19px;
+        }
+
+        .links-wrap {
+            display: flex;
+            flex-wrap: wrap;
+
+            .link {
+                width: ~'calc(100% / 3)';
+                height: 42px;
+                margin-bottom: 23px;
+
+                & > a {
+                    display: block;
+                    width: 42px;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .facebook {
+                background: url("@{image__url}facebook.png") center no-repeat;
+            }
+
+            .google-plus {
+                background: url("@{image__url}google_plus.png") center no-repeat;
+            }
+
+            .twitter {
+                background: url("@{image__url}twiter.png") center no-repeat;
+            }
+
+            .youtube {
+                background: url("@{image__url}youtube.png") center no-repeat;
+            }
+
+            .vk {
+                background: url("@{image__url}vk.png") center no-repeat;
+            }
+            .instagram {
+                background: url("@{image__url}instagram.png") center no-repeat;
+            }
+        }
+    }
+}
