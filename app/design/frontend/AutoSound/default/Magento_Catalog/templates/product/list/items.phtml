@@ -202,6 +202,7 @@ $shuffle; ?>">
                             <?php endif; ?>
                             <div class="product-item-info <?= /* @noEscape */
                             $available ?>">
+                                <?= ($item->getSpecialPrice()) ? '<span class="sale-percent-label">' . __("Sale") . '&nbsp;' . number_format((($item->getSpecialPrice() / $item->getPrice() - 1) * 100), 0) . '%' . '</span>' : ''; ?>
                                 <?= /* @noEscape */
                                 '<!-- ' . $image . '-->' ?>
                                 <a href="<?= $block->escapeUrl($block->getProductUrl($item)); ?>"
@@ -213,9 +214,9 @@ $shuffle; ?>">
                                         <span class="sku-code"><?= __("Sku"); ?><span><?= __("&nbsp;:&nbsp;" . $item->getSku()) ?></span></span>
                                         <?php if ($qty = $StockState->getStockQty($item->getId()) > 10): ?>
                                             <span class='status in-stock'><?= __("In stock"); ?></span>
-                                        <?php elseif ($qty = $StockState->getStockQty($item->getId()) <= 10 && $qty = $StockState->getStockQty($item->getId()) > 0):?>
+                                        <?php elseif ($qty = $StockState->getStockQty($item->getId()) <= 10 && $qty = $StockState->getStockQty($item->getId()) > 0): ?>
                                             <span class='status ends'><?= __("Ends"); ?></span>
-                                        <?php else:?>
+                                        <?php else: ?>
                                             <span class='status ends'><?= __("Out of stock"); ?></span>
                                         <?php endif; ?>
                                     </div>
@@ -278,7 +279,7 @@ $shuffle; ?>">
                                                                                       href="<?= $block->escapeUrl($block->getProductUrl($item)); ?>">
                                             <?= $block->escapeHtml($item->getName()); ?></a>
                                     </strong>
-                                    <?= ($showRating)?  $block->getReviewsSummaryHtml($item, $templateType): ''; ?>
+                                    <?= ($showRating) ? $block->getReviewsSummaryHtml($item, $templateType) : ''; ?>
                                     <?= /* @noEscape */
                                     $block->getProductPrice($item); ?>
                                     <?php if ($templateType) : ?>

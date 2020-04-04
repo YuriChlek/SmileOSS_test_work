@@ -11,9 +11,9 @@
 ?>
 <?php $_product = $block->getProduct(); ?>
 <div class="product-addto-links" data-role="add-to-links">
-    <?= $block->getChildHtml("product.info.socialmedia") ?>
+    <?= $block->getChildHtml("product.info.socialmedia"); ?>
     <?php if ($_product->isSaleable()) : ?>
-        <?= $block->getChildHtml("view.addto.wishlist") ?>
+        <?= $block->getChildHtml("view.addto.wishlist"); ?>
     <?php endif; ?>
-    <?= $block->getChildHtml("view.addto.compare") ?>
+    <?= $block->getChildHtml("view.addto.compare"); ?>
 </div>

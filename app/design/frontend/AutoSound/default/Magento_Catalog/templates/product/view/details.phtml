@@ -23,12 +23,12 @@
                     $label = $block->getChildData($alias, 'title');
                     ?>
                     <div class="data item title"
-                         data-role="collapsible" id="tab-label-<?= $block->escapeHtmlAttr($alias) ?>">
+                         data-role="collapsible" id="tab-label-<?= $block->escapeHtmlAttr($alias); ?>">
                         <a class="data switch"
                            tabindex="-1"
                            data-toggle="trigger"
-                           href="#<?= $block->escapeUrl($alias) ?>"
-                           id="tab-label-<?= $block->escapeHtmlAttr($alias) ?>-title">
+                           href="#<?= $block->escapeUrl($alias); ?>"
+                           id="tab-label-<?= $block->escapeHtmlAttr($alias); ?>-title">
                             <?= /* @noEscape */
                             $label ?>
                         </a>
@@ -48,9 +48,9 @@
                     $label = $block->getChildData($alias, 'title');
                     ?>
                     <div class="data item content"
-                         aria-labelledby="tab-label-<?= $block->escapeHtmlAttr($alias) ?>-title"
-                         id="<?= $block->escapeHtmlAttr($alias) ?>" data-role="content">
-                        <div class="article <?= $alias?>">
+                         aria-labelledby="tab-label-<?= $block->escapeHtmlAttr($alias); ?>-title"
+                         id="<?= $block->escapeHtmlAttr($alias); ?>" data-role="content">
+                        <div class="article <?= $alias ?>">
                             <?= /* @noEscape */
                             $html ?>
                         </div>
@@ -74,12 +74,12 @@
                     ?>
 
                     <div class="data item title reviews"
-                         data-role="collapsible" id="tab-label-<?= $block->escapeHtmlAttr($alias) ?>">
+                         data-role="collapsible" id="tab-label-<?= $block->escapeHtmlAttr($alias); ?>">
                         <a class="data switch reviews"
                            tabindex="-1"
                            data-toggle="trigger"
-                           href="#<?= $block->escapeUrl($alias) ?>"
-                           id="tab-label-<?= $block->escapeHtmlAttr($alias) ?>-title">
+                           href="#<?= $block->escapeUrl($alias); ?>"
+                           id="tab-label-<?= $block->escapeHtmlAttr($alias); ?>-title">
                             <?= /* @noEscape */
                             $label ?>
                         </a>
@@ -87,12 +87,12 @@
                     <button class="add-review-button" type="button" class="action"
                             data-trigger="trigger"><?= __("Add review"); ?></button>
                     <div class="data item content"
-                         aria-labelledby="tab-label-<?= $block->escapeHtmlAttr($alias) ?>-title"
-                         id="<?= $block->escapeHtmlAttr($alias) ?>" data-role="content">
-                            <div class="article">
-                                <?= /* @noEscape */
-                                $html ?>
-                            </div>
+                         aria-labelledby="tab-label-<?= $block->escapeHtmlAttr($alias); ?>-title"
+                         id="<?= $block->escapeHtmlAttr($alias); ?>" data-role="content">
+                        <div class="article">
+                            <?= /* @noEscape */
+                            $html ?>
+                        </div>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -100,9 +100,9 @@
     </div>
 <?php endif; ?>
 <script type="text/x-magento-init">
-                 {
-                        "*": {
-                            "AutoSound_Theme/js/readmore-include": {}
-                        }
-                  }
+   {
+       "*": {
+           "AutoSound_Theme/js/readmore-include": {}
+           }
+   }
 </script>

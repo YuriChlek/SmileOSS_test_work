@@ -68,7 +68,8 @@
         .control .qty {
             width: 90px;
         }
-        .product-item-name{
+
+        .product-item-name {
             margin-left: 20px;
         }
     }
@@ -178,6 +179,7 @@
     .product-info-main .price-box .price-wrapper .price,
     .product-options-bottom .price-box .price-wrapper .price {
         font-size: 40px;
+        color: @autosound-color-dusty-gray;
     }
 
     .product-reviews-summary .reviews-actions .add {
@@ -188,6 +190,7 @@
         .action.view {
             padding-left: 34px;
             position: relative;
+            text-transform: lowercase;
 
             &:before {
                 .pseudo-elements-mixin();
@@ -197,13 +200,41 @@
                 width: 12px;
                 height: 11px;
             }
+
+            &:after {
+                .pseudo-elements-mixin();
+                bottom: 0;
+                right: 4px;
+                left: 35px;
+                border-bottom: 1px solid @autosound-color-boulder;
+            }
+        }
+    }
+
+    .conversation {
+        color: @autosound-color-boulder;
+        padding-left: 20px;
+        position: relative;
+        margin-left: 16px;
+
+        & > span {
+            border-bottom: 1px solid @autosound-color-boulder;
+        }
+
+        &:before {
+            .pseudo-elements-mixin();
+            background: url("@{image__url}conversation.png") center no-repeat;
+            left: 0;
+            top: 3px;
+            width: 13px;
+            height: 13px;
         }
     }
 
     .product-info-main {
         .product.alert {
             display: inline-block;
-            margin: 27px 0 0 20px;
+            margin: 24px 0 0 20px;
 
             .alert {
                 padding: 9px 43px 14px 38px;
@@ -224,10 +255,33 @@
         p {
             font-size: 12px;
             letter-spacing: -.1px;
+            color: @autosound-color-boulder;
         }
     }
 
     .product-info-wrapper {
+        .price-box {
+            display: flex;
+        }
+
+        .price-label {
+            display: none;
+        }
+
+        .old-price {
+            align-self: flex-end;
+            font-size: 16px;
+            color: @autosound-color-orange;
+            margin: 0 0 8px 20px;
+
+            .price-wrapper {
+                .price {
+                    color: @autosound-color-orange;
+                    font-size: 22px;
+                }
+            }
+        }
+
         .product-addto-links {
             .action {
                 border: none;
@@ -247,7 +301,7 @@
                     }
                 }
 
-                &:before {
+                &::before {
                     .pseudo-elements-mixin();
                     left: 0;
                     top: 12px;
@@ -255,7 +309,7 @@
             }
 
             .tocompare {
-                &:before {
+                &::before {
                     width: 25px;
                     height: 18px;
                     background: url("@{image__url}compare-prod.png") center no-repeat;
@@ -263,7 +317,7 @@
             }
 
             .towishlist {
-                &:before {
+                &::before {
                     width: 25px;
                     height: 18px;
                     background: url("@{image__url}wishlist.png") center no-repeat;
@@ -279,7 +333,7 @@
         position: relative;
         z-index: 5;
 
-        &:before {
+        &::before {
             .pseudo-elements-mixin();
             left: 0;
             top: 10px;
@@ -378,7 +432,7 @@
             /* fix firefox animation glitch */
             display: flex;
 
-            &:after {
+            &::after {
                 content: ".";
                 display: block;
                 clear: both;
@@ -449,6 +503,24 @@
                 position: relative;
             }
 
+            .sale-percent-label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 106px;
+                height: 29px;
+                color: @autosound-color-white;
+                text-align: center;
+                padding: 5px;
+                font-size: 14px;
+                font-weight: 700;
+                background-color: @autosound-color-orange;
+                border-radius: 5px;
+                z-index: 10;
+                box-sizing: border-box;
+                line-height: 20px;
+            }
+
             .details {
                 text-align: center;
             }
@@ -460,6 +532,18 @@
 
             .price-box {
                 display: flex;
+            }
+
+            .old-price {
+                align-self: flex-end;
+                margin-bottom: 5px;
+                padding-left: 15px;
+                color: @autosound-color-orange;
+
+                .price {
+                    font-size: 14px;
+
+                }
             }
 
             .price {
@@ -680,9 +764,11 @@
         }
     }
 
-    .column.main {.block .title strong {
-        font-size: inherit;
-    }}
+    .column.main {
+        .block .title strong {
+            font-size: inherit;
+        }
+    }
 
     .block-content {
         .products {
@@ -816,7 +902,6 @@
 
     .block.review-add .review-form {
         margin: 0 auto;
-
     }
 
     .review-legend > span {
@@ -929,7 +1014,6 @@
             margin-left: 0;
             width: ~"calc(100% - 157px)";
             float: left;
-
         }
 
         .review-content-wrapper {
@@ -967,6 +1051,12 @@
         font-size: 15px;
         float: right;
         padding: 10px 17px 15px 19px;
+
+        &:hover,
+        &:active {
+            border: none;
+            background-color: @autosound-color-sunglow;
+        }
     }
 
     .product.data.items > .item.content {
@@ -1032,7 +1122,7 @@
             font-weight: bold;
             position: relative;
 
-            &:before {
+            &::before {
                 .pseudo-elements-mixin();
                 width: 18px;
                 height: 16px;
@@ -1053,7 +1143,7 @@
             margin-left: 10px;
             color: @autosound-color-torch-red;
 
-            &:before {
+            &::before {
                 background: url("@{image__url}finger-down.png") center no-repeat;
                 top: 2px;
             }
@@ -1142,23 +1232,33 @@
 
             .price-box {
                 margin-bottom: 19px;
+                justify-content: space-between;
             }
         }
 
-        .price {
-            display: inline-flex;
-            flex-direction: column;
-            text-align: left;
+        .regular-price,
+        .special-price {
+            .price {
+                display: inline-flex;
+                flex-direction: column;
+                text-align: left;
 
-            &::before {
-                display: inline-block;
-                content: 'В наличии';
-                color: @autosound-color-green;
-                font-size: 13px;
-                margin-right: auto;
-                padding-left: 20px;
-                background: url("@{image__url}flag.png") left no-repeat;
-                margin-bottom: 10px;
+                &::before {
+                    display: inline-block;
+                    content: 'В наличии';
+                    color: @autosound-color-green;
+                    font-size: 13px;
+                    margin-right: auto;
+                    padding-left: 20px;
+                    background: url("@{image__url}flag.png") left no-repeat;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .price-box {
+            .old-price {
+                margin-bottom: 0;
             }
         }
 
@@ -1239,7 +1339,8 @@
             }
         }
     }
-    .columns .column.main{
+
+    .columns .column.main {
         padding-bottom: 43px;
     }
 }

@@ -54,7 +54,7 @@
             margin-right: 4%;
         }
 
-        &:after {
+        &::after {
             display: block;
             content: '';
             clear: both;
@@ -66,7 +66,7 @@
             float: left;
             padding: 11px 5px;
 
-            &:after {
+            &::after {
                 display: none;
             }
         }
@@ -124,7 +124,7 @@
                     display: block;
                 }
 
-                &:before {
+                &::before {
                     transform: rotate(180deg);
                 }
             }
@@ -184,7 +184,7 @@
             }
         }
 
-        &:after {
+        &::after {
             display: block;
             content: '';
             clear: both;
@@ -228,7 +228,7 @@
         float: left;
         width: 24.2%;
         margin-left: 2%;
-        padding: 5px 5px 5px 10px;
+        padding: 3px 5px 5px 10px;
         position: relative;
         align-self: baseline;
 
@@ -250,7 +250,7 @@
             padding-right: 25px;
             position: relative;
 
-            &:before {
+            &::before {
                 display: block;
                 content: '';
                 position: absolute;
@@ -268,7 +268,7 @@
                     display: block;
                 }
 
-                &:before {
+                &::before {
                     transform: rotate(180deg);
                 }
             }
@@ -338,7 +338,7 @@
                 left: 3px;
             }
 
-            &:before {
+            &::before {
                 content: '';
                 position: absolute;
                 width: 28px;
@@ -460,42 +460,34 @@
                 }
 
                 &:first-child {
-                    .tab-text {
-                        &::before {
-                            background: url("@{image__url}percent.png") center no-repeat;
-                            left: 0;
-                            top: 0;
-                        }
+                    .tab-text::before {
+                        background: url("@{image__url}percent.png") center no-repeat;
+                        left: 0;
+                        top: 0;
                     }
                 }
 
                 &:nth-child(2) {
-                    .tab-text {
-                        &::before {
-                            background: url("@{image__url}comp-test.png") center no-repeat;
-                            left: -4px;
-                            top: -2px;
-                        }
+                    .tab-text::before {
+                        background: url("@{image__url}comp-test.png") center no-repeat;
+                        left: -4px;
+                        top: -2px;
                     }
                 }
 
                 &:nth-child(3) {
-                    .tab-text {
-                        &::before {
-                            background: url("@{image__url}choice.png") center no-repeat;
-                            left: -4px;
-                            top: -1px;
-                        }
+                    .tab-text::before {
+                        background: url("@{image__url}choice.png") center no-repeat;
+                        left: -4px;
+                        top: -1px;
                     }
                 }
 
                 &:nth-child(4) {
-                    .tab-text {
-                        &::before {
-                            background: url("@{image__url}news.png") center no-repeat;
-                            left: -5px;
-                            top: 0;
-                        }
+                    .tab-text ::before {
+                        background: url("@{image__url}news.png") center no-repeat;
+                        left: -5px;
+                        top: 0;
                     }
                 }
             }

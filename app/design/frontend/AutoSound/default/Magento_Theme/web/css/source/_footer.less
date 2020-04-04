@@ -12,10 +12,6 @@
         margin-top: 0;
         width: 100%;
 
-        .catalog {
-            /*margin-right: 4px;*/
-        }
-
         .company,
         .to-buyers {
             margin-right: 30px;
@@ -59,7 +55,7 @@
         z-index: 1;
         color: @autosound-color-white;
 
-        &:before {
+        &::before {
             .pseudo-elements-mixin();
             top: 0;
             left: 100%;
@@ -90,7 +86,6 @@
         .title {
             width: 100%;
         }
-
     }
 
     .footer-links-title {
@@ -201,6 +196,7 @@
             .vk {
                 background: url("@{image__url}vk.png") center no-repeat;
             }
+
             .instagram {
                 background: url("@{image__url}instagram.png") center no-repeat;
             }
