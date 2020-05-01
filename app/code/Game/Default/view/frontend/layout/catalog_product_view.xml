@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="memory.game.tab" as="memory_game" group="detailed_info"
+                   after="-" template="Game_Default::memory-game.phtml">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Memory Game</argument>
+                    <argument name="sort_order" xsi:type="string">80</argument>
+                    <argument name="at_call" xsi:type="string">getPackaging</argument>
+                    <argument name="at_code" xsi:type="string">packaging</argument>
+                    <argument name="css_class" xsi:type="string">packaging</argument>
+                    <argument name="at_label" xsi:type="string">packaging </argument>
+                    <argument name="add_attribute" xsi:type="string">itemprop="packaging"</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
